@@ -1,0 +1,50 @@
+{% extends 'webapp/base.html' %}
+
+{% block content %}
+
+<body>
+    <div class="card">
+        <div class="card-body">
+
+            <i class="fa fa-user-circle-o"></i> &nbsp; &nbsp;
+            <strong>
+                {{record.first_name |upper}}
+     
+                {{record.last_name}}
+            </strong>
+
+            <hr>
+
+            <p><strong>ID:</strong> {{record.id}} </p>
+       
+           
+       
+            <p><strong>E-Mail: </strong> {{record.email}} </p>
+       
+            <p><strong>Phone:  </strong> {{record.phone}} </p>
+       
+            <p><strong>Address:</strong> {{record.address}} </p>
+       
+            <p><strong>City:   </strong> {{record.city}} </p>
+       
+            <p><strong>State:  </strong> {{record.state}} </p>
+    
+            <p><strong>Country:</strong> {{record.country}}    </p>
+      
+            <p><strong>Creation Time:</strong> {{record.creation_date}}  </p>
+       
+            <!-- <p><strong>ID:</strong> {{record.ID} </p>} -->
+            
+        </div>
+
+      
+    </div>
+    <br>
+    <a class="btn btn-secondary text-capitalize" href="{% url 'dashboard' %}"> return  &nbsp;<i class="fa fa-arrow-left"></i></a>
+    &nbsp; 
+    <a class="btn btn-info text-capitalize" href="{% url 'update-record' record.id %}"> update &nbsp;<i class="fa fa-plus"></i></a>
+
+
+    <a class="btn btn-danger text-capitalize" href="{% url 'delete-record' record.id %}"> delete &nbsp; <i class="fa fa-minus"></i></a>
+</body> 
+{% endblock %}
